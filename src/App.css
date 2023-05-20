@@ -1,38 +1,302 @@
-.App {
-  text-align: center;
+.nav-link{
+  color:black !important;
+}
+.navbar{
+/* background-color: brown !important; */
+/* height: 100px; */
+/* background-color: brown; */
+position:sticky !important;
+top:0px;
+z-index: 100;
+}
+.navba{
+  display:flex;
+  justify-content:space-between;
+  width: 100%;
+  align-items: center;
+
+   /* background-color: aqua; */
+}
+.alert{
+  /* background-color: green; */
+position:sticky !important;
+top:100px;
+z-index: 100;
+padding-left: 0px;
+}
+.alertc{
+  height: 35px;
+  width: 100vw ;
+  margin: 0px !important; 
+  border-radius:2px;
+  /* align-items:flexStart; */
+  background-color:red;
+  z-index: 100;
+}
+h1{
+  font-size: 20px;
+}
+.row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* background-color: aqua; */
+}
+.flex{
+  display: flex;
+  flex-direction: row;
+}
+ button{
+  color: white;
+  background-color: red;
+  border-radius: 3px;
+  border: none;
+
+}
+button:hover{
+  color: white;
+  background-color: rgba(255, 0, 0, 0.886);
+  border-radius: 3px;
+
+  border: none;
+
+}
+.flex-container{
+  display: inline-flex;
+  /* background-color: aqua; */
+  align-items: center;
+}
+.flex-container p{
+  font-weight: bold;
+}
+.card{
+  /* background-color: blue; */
+
+  width:300px;
+  height: 400px;
+  box-shadow: 10px 8px 8px rgba(0, 0, 0, 0.559);
+  padding: 20px;
+   /* height:200px */
+
+}
+/* // "both": "concurrently \"npm run start\" \"nodemon server\"" */
+.card img{
+  width:200px;
+   height:200px;
+ margin-left: 40px;
+}
+.card h1{
+  /* background-color: red; */
+  display: inline-flex;
+
+  justify-content: center;
+
+}
+.flex{
+  display: inline-flex;
+
+  justify-content: space-between;
+
+}
+.card .flex-container{
+
+  display: inline-flex;
+
+  justify-content: space-between;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.pizza{
+  width: 300px;
+  margin: 20px;
+/* background-color: blue; */
 }
+.navba{
+  display:flex;
+  justify-content:space-between;
+  /* background-color: yellow; */
+/* position: sticky;
+    top: 0px;
+    z-index: 100; */
+}
+.navbaright{
+  display:inline-flex;
+  list-style: none;
+  align-items:center;
+  justify-content: center;
+  /* background-color: green; */
+}
+@media (max-width : 600px){
+  .dropdown{
+    /* background-color: blue; */
+    /* position: absolute; */
+margin-top: -50px !important;
+  }
+  .navba{
+  /* background-color: yellow; */
+    display:flex;
+    overflow-x: hidden;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  }
+  .navbaright{
+    display:flex;
+flex-direction: column;
+    align-items:center;
+    
+    /* justify-content: center; */
+    /* background-color: green; */
+  }
+
+}
+@media (max-width : 400px){
+
+  .pizza{
+    width: 200px;
+    margin: 20px 0px;
+
+  }
+  .navba{
+    overflow-x: hidden;
   }
 }
+@media (max-width : 400px){
+  
+  .card{
+    /* background-color: blue; */
+  
+    width:260px;
+    height: 350px;
+    box-shadow: 10px 8px 4px rgba(0, 0, 0, 0.559);
+    padding: 10px;
+     /* height:200px */
+  margin-left: 1px;
+ 
+  }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  .pizza{
+    width: 267px;
+    margin-left: -3px;
+   
+  
+  }
+  .card img {
+    width:170px;
+    height:170px;
+  margin-left: 25px;
+
+  }
+  .addbutton{
+    height: 26px;
+    width: 100%;
+  }
+  .card h1{
+    /* background-color: red; */
+    display: block;
+  
+    font-size: 16px;
+  
+  }
+  /* .flex{
+    display: flex;
+  
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+  
+  /* }  */
+  /* .card .flex-container{
+
+    display: flex;
+  
+  flex-direction: column;
+  } */
+  
+}
+
+.Registerinput input{
+ margin-bottom: 15px !important;
+ border-color: black;
+ margin: auto;
+}
+.Register{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 70%;
+  margin-left:15%;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media (max-width : 350px){
+  .Register {
+  width: 90%;
+  margin-left:5px;
   }
 }
+.Registerinput button{
+  display: flex;
+  align-items: center !important;
+  
+}
+.selectitem{
+  display: inline-flex;
+  width: 70%;
+  margin: 15px;
+  /* margin-left: 20px; */
+  justify-content: space-between;
+  /* background-color: rgba(0, 0, 0, 0.336); */
+  box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.286);
+}
+.selectitem button{
+  margin: 20px;
+}
+.order{
+  display:inline-flex;
+  width:80%;
+  background-color:red;
+   margin-top:15px;
+   color:white;
+
+}
+
+@media (max-width : 700px){
+  .selectitem{
+  width: 100%;
+  }
+}
+@media (max-width : 700px){
+  .order{
+  width: 100%;
+  }
+}
+@media (max-width : 550px){
+  .order{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  }
+}
+@media (max-width : 500px){
+  .selectitem{
+  display: flex;
+  flex-direction: column;
+  }
+}
+
+/* @media screen and (max-width:860px){
+
+     .nav-menu-active{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      font-size: large;
+  
+    }
+    .hamburger{
+
+        padding-top: 10px;
+         font-size: large;
+         display: initial;
+    }
+
+} */
