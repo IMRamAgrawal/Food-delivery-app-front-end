@@ -1,6 +1,5 @@
 export const addToCart = (pizza, quantity, varient)=>(dispatch, getState)=>{
-    // "proxy": "https://food-deleivery-app-backend-iqsf.onrender.com"
-    // "proxy": "http://localhost:5000"
+  
 
     var cartItem= {
         name: pizza.name,

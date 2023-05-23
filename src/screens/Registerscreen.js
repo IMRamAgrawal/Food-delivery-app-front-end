@@ -12,10 +12,10 @@ const Registerscreen = (props) => {
     const {alert, showAlert, setAlert} = props
     
     let navigate = useNavigate();
-    const[name, SetName] = useState("")
-    const[email, SetEmail] = useState("")
-    const[password, SetPassword] = useState("")
-    const[cpassword, SetCpassword] = useState("")
+    const[name, setName] = useState("")
+    const[email, setEmail] = useState("")
+    const[password, setPassword] = useState("")
+    const[cpassword, setCpassword] = useState("")
     const registerstate = useSelector(state=>state.registerUserReducer)
     const {error, loading, success} = registerstate
     const dispatch = useDispatch()
@@ -24,7 +24,10 @@ const Registerscreen = (props) => {
     const register =()=>{
       
     if(password!== cpassword){
-        showAlert("Password And Confirm Password Not Matched","Sorry")
+        showAlert("Password And Confirm Password Not Matched","Warning")
+    }
+    else if((email.indexOf("@") === -1) || (email.indexOf(".") === -1)){
+        showAlert("Not a valid Email","Warning")
     }
     else{
         const user={
@@ -34,14 +37,18 @@ const Registerscreen = (props) => {
         }
         // console.log(user)
         dispatch(registerUser(user))
-        // navigate("/login")
-        // (showAlert("Invalid credentials", "warning"))
+           
     }
+ 
 }
 useEffect(() => {
     if (success) {
-        showAlert("Successfully Registered", "Congratulations")
-        navigate("/login")
+    showAlert("Successfully Registered", "Congratulations")
+     setName("")
+     setEmail("")
+     setPassword("")
+     setCpassword("")
+    // window.location.href="/login"
     } else if (error) {
         //showAlert(error, "danger")
         showAlert("Email id Already Exist","danger")
@@ -58,11 +65,11 @@ useEffect(() => {
             <h2>Register</h2>
         </div>
     <div className="Registerinput" style={{width: "90%"}}>
-        <input required type="text" placeholder="name" value={name} onChange={(e)=>{SetName(e.target.value)}} className='form-control'/>
-        <input required type="email" placeholder="email" value={email} onChange={(e)=>{SetEmail(e.target.value)}} className='form-control'/>
-        <input  required type="password" placeholder="password" value={password} onChange={(e)=>{SetPassword(e.target.value)}} className='form-control'/>
-        <input required type="password" placeholder="confirm password" value={cpassword} onChange={(e)=>{SetCpassword(e.target.value)}} className='form-control'/>
-        <button onClick={register}>Register</button>
+        <input required type="text" placeholder="name" value={name} onChange={(e)=>{setName(e.target.value)}} className='form-control'/>
+        <input required type="email" placeholder="email" value={email} onChange={(e)=>{setEmail(e.target.value)}} className='form-control'/>
+        <input  required type="password" placeholder="password" value={password} onChange={(e)=>{setPassword(e.target.value)}} className='form-control'/>
+        <input required type="password" placeholder="confirm password" value={cpassword} onChange={(e)=>{setCpassword(e.target.value)}} className='form-control'/>
+        <button disabled={name.length<2 || email.length<3 ||password.length<2} onClick={register}>Register</button>
     </div>
     <div>
         <Link to="/login" style={{textDecoration:"none", color:"black"}}>Click here to login</Link>

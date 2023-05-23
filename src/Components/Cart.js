@@ -7,9 +7,10 @@ import { placeOrder } from '../actions/orderAction'
 import {orderstate} from "../reducers/orderreducer"
 import {loginstate} from "../reducers/userReducer"
 import { useEffect } from 'react'
+import { useNavigate } from "react-router-dom";
 // import { DeleteIcon } from 'react-delete-icon'
 const Cart = ({showAlert}) => {
-
+  const navigate = useNavigate();
 const cartstate = useSelector(state=>state.cartReducer)
 const cartItems = cartstate.cartItems
 const orderstate = useSelector(state=>state.placeOrderReducer)
@@ -24,6 +25,12 @@ useEffect(() => {
     // window.location.href="/"
   } else if (errors) {
     showAlert("Some Internal issue", "Warning")
+    // Show error message to user
+  }
+   else if (loading && !currentUser) {
+    alert("Please login for confirm your order")
+    localStorage.removeItem("cartItems", JSON.stringify(cartItems))
+    navigate("/login")
     // Show error message to user
   }
 }, [success, errors, loading, currentUser])

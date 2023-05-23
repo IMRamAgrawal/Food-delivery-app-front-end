@@ -4,10 +4,11 @@ import { cartReducer } from '../reducers/cartReducer'
 import { Link } from 'react-router-dom'
 import { logoutUser } from '../actions/userAction'
 import { useNavigate } from 'react-router-dom'
-import {FaBars, FaTimes} from "react-icons/fa";
+
 import { useState } from 'react'
 
-const Navbar = () => {
+
+const Navbar = ({alert, setAlert, showAlert}) => {
   const cartstate = useSelector(state=>state.cartReducer)
   const userstate = useSelector(state=>state.loginUserReducer)
   const {currentUser} = userstate
@@ -18,6 +19,7 @@ const Navbar = () => {
     setClick(!click)
   }
   return (
+    
     
         <nav className="navbar navbar-expand-lg shadow-lg p-1 bg-body rounded">
   
@@ -34,23 +36,12 @@ const Navbar = () => {
         </div>
         <div className={click ? "nav-menu-active" : "navbaright"}>
            
-        {/* {currentUser ? (<li>{currentUser.name}</li>) : 
-         <li className="nav-item">
-         <Link className="nav-link active" aria-current="page" to="/login">Login</Link>
-       </li>
-        }
-        <li className="nav-item" >
-         <Link className="nav-link active" aria-current="page" to="/login" onClick={()=>{dispatch(logoutUser())}}> Logout</Link>
-       </li>
-       <li className="nav-item">
-         <Link className="nav-link active" aria-current="page" to="/orders" >My-Orders</Link>
-       </li> */}
-             {currentUser ?
-             <div className="nav-item dropdown" >
+   {currentUser ?
+             <div className="nav-item dropdown">
              <a style={{backgroundColor: "white !important", color:"black", textDecoration:"none"}} class=" dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
              {currentUser.name}
              </a>
-             <ul className="dropdown-menu">
+             <ul className="dropdown-menu" style={{position:"relative",zIndex:"100"}}>
              <Link className="dropdown-item" aria-current="page" to="/login" onClick={()=>{dispatch(logoutUser())}}> Logout</Link>
              <Link className="dropdown-item" aria-current="page" to="/orders" >My-Orders</Link>
            
@@ -59,15 +50,12 @@ const Navbar = () => {
              : 
              <Link className="nav-link active" aria-current="page" to="/login">Login</Link>}
 
-      
-             
-       
-     
-    </div>
+      </div>
     </div>
   
+
 </nav>
-  
+   
   )
 }
 

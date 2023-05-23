@@ -1,31 +1,38 @@
+body{
+overflow-x: hidden;
+}
 .nav-link{
   color:black !important;
 }
 .navbar{
 /* background-color: brown !important; */
-/* height: 100px; */
-/* background-color: brown; */
+
+/* background-color: brown !important; */
+padding: 10px;
+position: absolute;
 position:sticky !important;
 top:0px;
 z-index: 100;
+overflow-x: hidden;
 }
 .navba{
   display:flex;
   justify-content:space-between;
-  width: 100%;
+  width: 100vw;
   align-items: center;
 
    /* background-color: aqua; */
 }
 .alert{
   /* background-color: green; */
-position:sticky !important;
-top:100px;
+
+position: sticky !important;
+top:50px;
 z-index: 100;
 padding-left: 0px;
 }
 .alertc{
-  height: 35px;
+  height: 38px;
   width: 100vw ;
   margin: 0px !important; 
   border-radius:2px;
@@ -46,6 +53,9 @@ h1{
 .flex{
   display: flex;
   flex-direction: row;
+}
+.dropdown{
+  
 }
  button{
   color: white;
@@ -127,17 +137,16 @@ button:hover{
   /* background-color: green; */
 }
 @media (max-width : 600px){
-  .dropdown{
-    /* background-color: blue; */
-    /* position: absolute; */
-margin-top: -50px !important;
+  .alert{
+    /* background-color: green; */
+  
+  position: sticky !important;
+  top:65px;
+  z-index: 100;
+  padding-left: 0px;
   }
-  .navba{
-  /* background-color: yellow; */
-    display:flex;
-    overflow-x: hidden;
 
-  }
+
   .navbaright{
     display:flex;
 flex-direction: column;
@@ -157,6 +166,14 @@ flex-direction: column;
   }
   .navba{
     overflow-x: hidden;
+  }
+  .alert{
+    /* background-color: green; */
+  
+  position: sticky !important;
+  top:90px;
+  z-index: 100;
+  padding-left: 0px;
   }
 }
 @media (max-width : 400px){
@@ -196,20 +213,7 @@ flex-direction: column;
     font-size: 16px;
   
   }
-  /* .flex{
-    display: flex;
-  
-    flex-direction: column;
-    justify-content: center;
-    /* align-items: center; */
-  
-  /* }  */
-  /* .card .flex-container{
 
-    display: flex;
-  
-  flex-direction: column;
-  } */
   
 }
 
@@ -260,6 +264,7 @@ flex-direction: column;
 @media (max-width : 700px){
   .selectitem{
   width: 100%;
+  /* border-color: red; */
   }
 }
 @media (max-width : 700px){
@@ -281,22 +286,4 @@ flex-direction: column;
   }
 }
 
-/* @media screen and (max-width:860px){
 
-     .nav-menu-active{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      font-size: large;
-  
-    }
-    .hamburger{
-
-        padding-top: 10px;
-         font-size: large;
-         display: initial;
-    }
-
-} */

@@ -1,6 +1,7 @@
 import axios from "axios";
 import { loginUserReducer } from "../reducers/userReducer";
 import { cartReducer } from "../reducers/cartReducer";
+// import { useNavigate } from "react-router-dom";
 
 export const placeOrder = ()=>async(dispatch, getState)=>{
     
@@ -8,12 +9,14 @@ export const placeOrder = ()=>async(dispatch, getState)=>{
     
     const currentUser = getState().loginUserReducer.currentUser
     const cartItems = getState().cartReducer.cartItems
+   
       
-    if(!currentUser){
-        alert("Please login for confirm your order")
-        localStorage.removeItem("cartItems", JSON.stringify(cartItems))
-        window.location.href="/"
-    }
+    // if(!currentUser){
+    //     alert("Please login for confirm your order")
+    //     localStorage.removeItem("cartItems", JSON.stringify(cartItems))
+    //     navigate("/login")
+     
+    // }
 try{
 
     
